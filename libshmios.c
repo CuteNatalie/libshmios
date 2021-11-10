@@ -71,5 +71,5 @@ int shmdt (const void *__shmaddr)
 	ptr = (size_t *)__shmaddr;
 	ptr--;
 	size = *ptr;
-	return munmap((void *)ptr, size + sizeof(size_t));
+    return shm_unlink((void *)ptr);
 }
